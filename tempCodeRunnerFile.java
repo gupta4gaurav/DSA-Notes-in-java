@@ -1,0 +1,1 @@
+inverted_rotated_half_pyramid
