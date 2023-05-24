@@ -54,8 +54,8 @@ public class Strings
         // String str = new String("Hello");
         // String path = "WNEENESENNN";
         // System.out.println(getShortestPath(path));
-        String str = "Gaurav";
-        printString(str);
+        // String str = "Gaurav";
+        // printString(str);
 
         // System.out.println(isPalindrome(str));
         
