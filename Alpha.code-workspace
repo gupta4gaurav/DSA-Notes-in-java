@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.debug.settings.forceBuildBeforeLaunch": false,
+		"aws.codeWhisperer.includeSuggestionsWithCodeReferences": false
+	}
+}

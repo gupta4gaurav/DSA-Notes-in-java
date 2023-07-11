@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BinaryTreesBuildTree",
+            "request": "launch",
+            "mainClass": "BinaryTreesBuildTree",
+            "projectName": "Alpha_8f38e836"
+        },
+        {
+            "type": "java",
             "name": "MaxLengthChainPairs",
             "request": "launch",
             "mainClass": "MaxLengthChainPairs",
