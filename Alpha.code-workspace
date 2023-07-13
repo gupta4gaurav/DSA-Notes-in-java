@@ -6,6 +6,8 @@
 	],
 	"settings": {
 		"java.debug.settings.forceBuildBeforeLaunch": false,
-		"aws.codeWhisperer.includeSuggestionsWithCodeReferences": false
+		"aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
+		"aws.codeWhisperer.importRecommendation": false,
+		"aws.codeWhisperer.shareCodeWhispererContentWithAWS": false
 	}
 }
