@@ -27,40 +27,54 @@ public class TopView {
         if (root == null) {
             return;
         }
+
         // Level Order Traversal
         Queue<Info> q = new LinkedList<>();
 
+        // HashMap to store the nodes with their horizontal distances
         HashMap<Integer, Node> map = new HashMap<>();
-        int min = 0, max = 0;
 
+        int min = 0, max = 0; // Variables to track the minimum and maximum horizontal distances
+
+        // Add the root node with horizontal distance 0 to the queue
         q.add(new Info(root, 0));
-        q.add(null);
+        q.add(null); // Add a marker to indicate the end of a level
 
         while (!q.isEmpty()) {
             Info curr = q.remove();
+
             if (curr == null) {
+                // If the current node is null, it indicates the end of a level
+
                 if (q.isEmpty()) {
-                    break;
+                    break; // If the queue is empty, we have processed all nodes
                 } else {
-                    q.add(null);
+                    q.add(null); // Add a marker for the next level
                 }
             } else {
-                if (!map.containsKey(curr.hd)) { // First time my hd is encountered
+                // If the current node is not null
+
+                if (!map.containsKey(curr.hd)) {
+                    // If the horizontal distance is encountered for the first time,
+                    // add the node to the map
                     map.put(curr.hd, curr.node);
                 }
 
+                // Enqueue the left child with a reduced horizontal distance (hd - 1)
                 if (curr.node.left != null) {
                     q.add(new Info(curr.node.left, curr.hd - 1));
-                    min = Math.min(min, curr.hd - 1); // Fix: Update min using Math.min
+                    min = Math.min(min, curr.hd - 1); // Update the minimum horizontal distance
                 }
 
+                // Enqueue the right child with an increased horizontal distance (hd + 1)
                 if (curr.node.right != null) {
                     q.add(new Info(curr.node.right, curr.hd + 1));
-                    max = Math.max(max, curr.hd + 1);
+                    max = Math.max(max, curr.hd + 1); // Update the maximum horizontal distance
                 }
             }
         }
 
+        // Print the nodes in the top view from the minimum to the maximum horizontal distance
         for (int i = min; i <= max; i++) {
             System.out.print(map.get(i).data + " ");
         }
@@ -69,11 +83,11 @@ public class TopView {
 
     public static void main(String[] args) {
         /*
-         * 1
-         * / \
-         * 2 3
-         * / \ / \
-         * 4 5 6 7
+         *      1
+         *     / \
+         *    2   3
+         *   / \ / \
+         *  4  5 6  7
          * 
          * expected output : 4 2 1 3 7
          */
