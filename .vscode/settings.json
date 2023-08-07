@@ -3,5 +3,6 @@
     "editor.acceptSuggestionOnEnter": "on",
     "aws.codeWhisperer.importRecommendation": false,
     "aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
-    "aws.telemetry": false
+    "aws.telemetry": false,
+    "github.copilot.editor.enableAutoCompletions": false
 }
