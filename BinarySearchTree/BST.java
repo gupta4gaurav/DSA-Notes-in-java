@@ -126,6 +126,23 @@ public class BST {
         }
         return root;
     }
+    
+    public static void printInRange(Node root, int k1, int k2){
+        if(root == null){
+            return;
+        }
+        if(root.data >= k1 && root.data <= k2){
+            printInRange(root.left, k1, k2);
+            System.out.print(root.data + " ");
+            printInRange(root.right, k1, k2);
+        }
+        else if (root.data > k1){
+            printInRange(root.left, k1, k2);
+        }
+        else {
+            printInRange(root.right, k1, k2);
+        }
+    }
 
     public static void main(String[] args) {
         // int[] values = {5, 1, 3, 4, 2, 7}; // array of values to be inserted into the
@@ -146,15 +163,16 @@ public class BST {
         // System.out.println(false);
         // }
 
-        // Print the tree in in-order
-        inorder(root);
-        System.out.println();
+        // // Print the tree in in-order
+        // inorder(root);
+        // System.out.println();
         
-        // Delete a node and then print the tree again to verify
-        root = delete(root, 1);
-        System.out.println();
+        // // Delete a node and then print the tree again to verify
+        // root = delete(root, 1);
+        // System.out.println();
 
-        inorder(root);
+        // inorder(root);
 
+        printInRange(root, 5, 12);
     }
 }
